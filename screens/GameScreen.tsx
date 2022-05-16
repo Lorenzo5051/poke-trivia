@@ -1,16 +1,19 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View, Image} from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
-import { Button } from 'react-native-elements';
+import { Button } from 'react-native-elements';   
+import Game from "../componets/Game";
+
+
 
 
 const image = { uri: "https://i.pinimg.com/564x/fa/48/7d/fa487d072c17cf4053689616ddfc02b3.jpg" };
 
-const Game: React.FC<StackScreenProps<any>> = ({ navigation }) => {
+const GameScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-       
+      <Game/>
       </ImageBackground>
     </View>
   );
@@ -35,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Game;
+export default GameScreen;

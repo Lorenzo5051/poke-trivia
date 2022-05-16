@@ -7,7 +7,7 @@ import { DataTable } from 'react-native-paper';
 const image = { uri: "https://i.pinimg.com/564x/fa/48/7d/fa487d072c17cf4053689616ddfc02b3.jpg" };
 const optionsPerPage = [2, 3, 4];
 
-const Leaderboards: React.FC<StackScreenProps<any>> = ({ navigation }) => {
+const LeaderboardsScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 
 
   return (
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Leaderboards;
+export default LeaderboardsScreen;
