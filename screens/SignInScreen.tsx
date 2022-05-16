@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth();
+
+const image = { uri: "https://i.pinimg.com/564x/fa/48/7d/fa487d072c17cf4053689616ddfc02b3.jpg" };
 
 const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   const [value, setValue] = useState({
@@ -29,6 +31,7 @@ const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   
   return (
     <View style={styles.container}>
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <Text>Sign up screen!</Text>
       {!!value.error && 
         <View style={styles.error}>
@@ -54,6 +57,7 @@ const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
         />
         <Button title="Sign in" buttonStyle={styles.control} onPress={signIn} />
       </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -61,10 +65,6 @@ const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   controls: {
     flex: 1,
@@ -78,6 +78,12 @@ const styles = StyleSheet.create({
     padding: 10,
     color: '#fff',
     backgroundColor: '#D54826FF',
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: 'center',
+    paddingTop: 20,
   },
 });
 

@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '../screens/HomeScreen';
+import Leaderboards from '../screens/Leaderboards';
+import Game from '../screens/Game';
 
 const Stack = createStackNavigator();
 
@@ -11,7 +13,8 @@ export default function UserStack() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        {/* Las pantallas a las que el usuario pueda entrar */}
+        <Stack.Screen name="Leaderboards" component={Leaderboards} />
+        <Stack.Screen name="Game" component={Game} />
       </Stack.Navigator>
     </NavigationContainer>
   );

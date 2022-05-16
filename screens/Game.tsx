@@ -6,22 +6,11 @@ import { Button } from 'react-native-elements';
 
 const image = { uri: "https://i.pinimg.com/564x/fa/48/7d/fa487d072c17cf4053689616ddfc02b3.jpg" };
 
-const WelcomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
+const Game: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-       <Image source={require('../img/name.png')} style={{ width: 200, height: 150 }}/>
-
-      <View style={styles.buttons}>
-        <Button 
-          title="Sign in"
-          buttonStyle={styles.button}
-          onPress={() => navigation.navigate('Sign In') }/>
-        <Button 
-          title="Sign up"
-          buttonStyle={styles.button}
-          onPress={() => navigation.navigate('Sign Up') }/>
-      </View>
+       
       </ImageBackground>
     </View>
   );
@@ -46,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeScreen;
+export default Game;
